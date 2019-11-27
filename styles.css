@@ -1,0 +1,156 @@
+/* Global rules */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  background-color: hsl(257, 40%, 49%);
+}
+
+.hidden {
+  display: none;
+  visibility: hidden;
+}
+/* End Globals */
+
+/* MOBILE first */
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 127px auto;
+  grid-template-areas:
+    "logo"
+    "illustration"
+    "body-txt"
+    "social"
+    "footer"
+  ;
+  background-image: url("./images/bg-mobile.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.logo {
+  grid-area: logo;
+}
+
+.logo img {
+  padding-top: 30px;
+  padding-left: 40px;
+  max-width: 180px;
+}
+
+.illustration {
+  grid-area: illustration;
+  background-image: url("./images/illustration-mockups.svg");
+  height: 220px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position-x: center;
+}
+
+.body-text {
+  grid-area: body-txt;
+  margin-top: 72px;
+}
+
+.body-text h2, .body-text h3 {
+  color: white;
+  text-align: center;
+}
+
+.body-text h2 {
+  font-family: 'Poppins', sans-serif;
+}
+
+.body-text h3 {
+  font-family: 'Open Sans', sans-serif;
+  font-size: medium;
+  max-width: 292px;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+.body-text button {
+  color:hsl(257, 40%, 49%);;
+  height: 40px;
+  width: 200px;
+  background-color: white;
+  border: none;
+  border-radius: 40px;
+  display: block;
+  margin: 0 auto;
+  box-shadow: 0px 5px 7px -5px black;
+  margin-top: 20px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.body-text button:hover {
+  color: deeppink;
+  background-color: gainsboro;
+}
+
+.social {
+  grid-area: social;
+  text-align: center;
+  margin-top: 55px;
+}
+
+.social li {
+  display: inline-block;
+}
+
+.social li i {
+  color: white;
+  border: 1px solid white;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  padding-top: 7px;
+  margin: 5px;
+}
+
+.footer {
+  grid-area: footer;
+  margin-top: 50px;
+  margin-bottom: 15px;
+}
+
+.footer .attribution {
+  font-size: 11px;
+  text-align: center;
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+}
+.footer .attribution a {
+  color: white;
+}
+/* DESKTOP (Larger than mobile) */
+@media screen and (min-width: 376px) {
+  .wrapper {
+    grid-template-columns: 80px 1fr 1fr;
+    grid-template-rows: 127px auto auto auto;
+    grid-template-areas:
+    ". logo ."
+    ". illustration body-txt"
+    ". . social"
+    "footer footer footer";
+    background-image: url("./images/bg-desktop.svg");
+    background-position-x: right;
+  }
+
+  .logo img {
+    max-width: 200px;
+  }
+
+  .illustration {
+    height: 500px;
+  }
+}
